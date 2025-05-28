@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Portfolio - Home</title>
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --light-color: #ecf0f1;
+      --dark-color: #2c3e50;
+      --text-color: #333;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f9f9f9;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--accent-color);
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin-bottom: 0.5rem;
+    }
+    
+    header p {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      opacity: 0.9;
+    }
+    
+    /* Main Content */
+    main {
+      flex: 1;
+      width: 100%;
+    }
+    
+    /* Section Styles */
+    section {
+      max-width: 1000px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+    }
+    
+    h2 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-color);
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+    }
+    
+    /* About Me Section */
+    section p {
+      margin-bottom: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
+    }
+    
+    /* Projects Section */
+    article {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    article h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+    }
+    
+    /* Contact Section */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .contact-info p {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      word-break: break-all;
+    }
+    
+    /* Footer Styles */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: auto;
+    }
+    
+    /* Button Styles */
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+      transition: all 0.3s ease;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Navigation for Mobile */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      section {
+        padding: 0 1rem;
+      }
+      
+      article {
+        padding: 1.2rem;
+      }
+      
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+      
+      /* Stack contact items on small screens */
+      .contact-info p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 2.5rem 1rem;
+      }
+      
+      section {
+        margin-bottom: 1.5rem;
+      }
+      
+      article {
+        margin-bottom: 1rem;
+      }
+      
+      /* Make sure email doesn't overflow */
+      .contact-info p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+    }
+    
+    /* Animation for better interactivity */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    section {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    section:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    
+    section:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    
+    section:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    <h1>Ravi Maharjan</h1>
+    <p>Ethical Hacking Student | IT Consultant</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I am interested in using modern technology to start a business.</p>
+        <a href="about me.html" class="btn">Info About Me</a>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <article>
+      <h3>Portfolio</h3>
+      <p>HTML based personal portfolio</p>
+        <a href="project.html" class="btn">View Project</a>
+    </article>
+  </section>
+
+  <section>
+    <h2>Contacts</h2>
+    <p>Email: dhimanr151@gmail.com</p>
+    
+    <p><a href="contact.html" class="btn">My Contact Information</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ravi Maharjan. All rights reserved.</p>
+  </footer>
+  <script>
+    // Simple JavaScript for future mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      
+      // This is a placeholder for future menu functionality
+      menuBtn.addEventListener('click', function() {
+        alert('Mobile menu would open here. You can add navigation links later.');
+      });
+      
+      // Hide menu button if screen is large
+      function checkScreenSize() {
+        if (window.innerWidth > 768) {
+          menuBtn.style.display = 'none';
+        } else {
+          menuBtn.style.display = 'block';
+        }
+      }
+      
+      // Check on load and resize
+      checkScreenSize();
+      window.addEventListener('resize', checkScreenSize);
+    });
+  </script>
+
+</body>
+</html>
